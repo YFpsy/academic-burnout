@@ -1,0 +1,95 @@
+
+@page { size:A4; margin:0; }
+.report { background:#e6edf0; color:#142d3c; font-size:10pt; line-height:1.58; }
+.print-controls { width:min(210mm,calc(100% - 24px)); margin:14px auto; display:flex; align-items:center; justify-content:space-between; font-size:14px; }
+.print-controls button { color:white; background:#123245; border:0; border-radius:3px; padding:7px 12px; }
+.report-page { width:210mm; min-height:296mm; padding:13mm 16mm 11mm; background:white; margin:0 auto 14px; display:flex; flex-direction:column; }
+.report-top,.report-bottom { display:flex; justify-content:space-between; color:#486571; font-size:8pt; }
+.report-top { border-top:2px solid #176e7a; padding-top:2mm; margin-bottom:7mm; }
+.report-bottom { border-top:1px solid #b6cbd1; padding-top:2mm; margin-top:auto; font-variant-numeric:tabular-nums; }
+.report-content { padding-bottom:4mm; }
+.report-content h1 { font-size:35pt; letter-spacing:-.055em; margin:2mm 0 3mm; }
+.report-content h2 { font-size:24pt; letter-spacing:-.04em; margin:0 0 3mm; }
+.report-content h3 { font-size:12pt; margin:0 0 1mm; }
+.report-content p+p { margin-top:1.6mm; }
+.report-deck { margin-bottom:4mm; font-size:10pt; }
+.report .eyebrow { font-size:10pt; }
+.report .cite { font-size:7.5pt; margin-top:1.1mm; }
+.report .note { font-size:8pt; margin-top:1.2mm; }
+.report-hero { border-bottom:1px solid #b6cbd1; padding:8mm 0 7mm; }
+.report-subtitle { font-size:14pt; line-height:1.55; }
+.report-byline { font-size:9pt; color:#176e7a; padding-top:2mm; }
+.report-overview { display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin:6mm 0 8mm; }
+.report-overview article { display:flex; gap:3mm; align-items:center; padding:3mm; background:#eaf3f5; }
+.report-overview strong { font:700 30pt/1 var(--num); letter-spacing:-.05em; color:var(--accent); }
+.report-overview h3,.report .key-findings h3 { font-size:10.5pt; }
+.report-overview p,.report .key-findings p { font-size:9pt; }
+.report .key-findings article { padding:3mm 3mm 0; }
+.report .key-findings article:first-child { padding-left:0; }
+.report .finding-metric { font-size:26pt; margin-bottom:2mm; }
+.report-callout { border-left:2px solid #76aab3; padding:3mm 4mm; margin-top:9mm; background:#f2f7f8; }
+.report .process { margin-bottom:5mm; }
+.report .process li { padding-top:2.4mm; padding-right:2mm; }
+.report .process p { font-size:8.4pt; }
+.report-sample { display:grid; grid-template-columns:1.15fr 1fr; gap:5mm; margin-bottom:5mm; align-items:start; }
+.report-sample p { margin-bottom:1.4mm; }
+.report .report-detail { margin-top:4.2mm; }
+.report figure { padding:3mm; margin-bottom:2.5mm; break-inside:avoid; }
+.report figcaption { font-size:10pt; margin-bottom:2mm; }
+.report .table-scroll { overflow:visible; break-inside:avoid; margin-top:2.8mm; }
+.report table { font-size:8.6pt; }
+.report table caption { padding-bottom:1mm; }
+.report th,.report td { padding:1.4mm 1.8mm; }
+.report .heat th,.report .heat td { padding:2mm 1mm; }
+.report .heat th { font-size:8.5pt; }
+.report .heat-legend { margin-top:1.5mm; font-size:8pt; }
+.report .grade-row { font-size:8.5pt; }
+.report .chain-node { font-size:9pt; padding:1.5mm; }
+.report .chain-link { min-width:13mm; }
+.report .secondary-paths div { padding:1.4mm 1.8mm; font-size:8pt; }
+.report .secondary-paths b { font-size:9pt; }
+.report .forest-row b,.report .forest-row small { font-size:8.5pt; }
+.report .ci-track { height:6mm; }
+.report .change-grid { gap:4mm; }
+.report .delta-row { font-size:8.4pt; }
+.report .interpretations { display:grid; grid-template-columns:1fr; gap:2.2mm; }
+.report .interpretations article { padding-top:1.6mm; }
+.report .interpretations dl { gap:.65mm; font-size:8.7pt; }
+.report .report-second { margin:4.2mm 0 2mm; font-size:17pt; }
+.report .capability-list article { grid-template-columns:1fr 3fr; padding:1.8mm 0; gap:2mm; }
+.report .capability-list h3 { font-size:9.5pt; }
+.report .capability-list p,.report-sources p { font-size:8.5pt; }
+.report .source-index { margin-top:1.7mm; }
+.report .source-index div { padding:.65mm 0; font-size:8pt; }
+@media screen and (max-width:820px) {
+  .report { background:white; }
+  .report-page { max-width:100%; min-height:0; padding:16px; }
+  .report .report-top { margin-bottom:12px; }
+  .report .report-content h1 { font-size:28pt; }
+  .report .report-content h2 { font-size:20pt; }
+  .report .table-scroll { overflow:auto; }
+}
+@media screen and (max-width:540px) {
+  .report .report-overview,.report .report-sample,.report .change-grid { grid-template-columns:1fr; }
+  .report .process { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .report .key-findings { grid-template-columns:1fr; }
+  .report .key-findings article { border-left:0; padding-left:0; }
+  .report .chain-node { font-size:8pt; padding:3px; }
+  .report .chain-link { min-width:31px; font-size:10px; }
+  .report .secondary-paths { grid-template-columns:1fr; }
+  .report .source-index div { grid-template-columns:76px 1fr; }
+}
+@media print {
+  .report { background:white; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .print-controls { display:none; }
+  .report-page { width:210mm; height:296.5mm; min-height:0; margin:0; break-after:page; }
+  .report-page:last-child { break-after:auto; }
+}
+
+
+.report .report-paths { margin-top:2.2mm; }
+.report-paths ul { display:grid; grid-template-columns:1fr 1fr; gap:0 4mm; list-style:none; margin:0; padding:0; }
+.report-paths li { display:flex; justify-content:space-between; gap:2mm; border-bottom:1px solid var(--line); padding:.55mm 0; font-size:8pt; }
+.report-paths li span { white-space:nowrap; font-variant-numeric:tabular-nums; }
+@media screen and (max-width:580px) { .report-paths ul { grid-template-columns:1fr; } }
+
